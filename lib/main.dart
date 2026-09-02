@@ -1,13 +1,13 @@
-import 'dart:convert';
+ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const  DesafioCTBApp());
+  runApp(const DesafioCTBApp());
 }
 
-class  DesafioCTBApp  extends StatelessWidget {
+class DesafioCTBApp extends StatelessWidget {
   const DesafioCTBApp({super.key});
 
   @override
@@ -35,7 +35,7 @@ class Question {
   final String explanation;
   final String legalBasis;
 
-  Question({
+  const Question({
     required this.id,
     required this.module,
     required this.difficulty,
@@ -54,8 +54,11 @@ class Question {
       question: json['question']?.toString() ?? '',
       options: List<String>.from(json['options'] ?? []),
       correctIndex: json['correct_index'] is int
-          ? json['correct_index']
-          : int.tryParse(json['correct_index']?.toString() ?? '0') ?? 0,
+          ? json['correct_index'] as int
+          : int.tryParse(
+                json['correct_index']?.toString() ?? '0',
+              ) ??
+              0,
       explanation: json['explanation']?.toString() ?? '',
       legalBasis: json['legal_basis']?.toString() ?? '',
     );
@@ -89,8 +92,13 @@ class _HomePageState extends State<HomePage> {
 
       setState(() {
         questions = list
-            .map((item) => Question.fromJson(item))
+            .map(
+              (item) => Question.fromJson(
+                Map<String, dynamic>.from(item),
+              ),
+            )
             .toList();
+
         loading = false;
       });
     } catch (e) {
@@ -133,7 +141,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text(
           'Desafio CTB',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
       ),
@@ -174,7 +184,7 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 35),
 
-               _InfoCard( 
+              _InfoCard(
                 icon: Icons.quiz,
                 title: 'Questões disponíveis',
                 value: '${questions.length}',
@@ -238,7 +248,7 @@ class _InfoCard extends StatelessWidget {
   final String title;
   final String value;
 
-  const  _InfoCard({
+  const _InfoCard({
     required this.icon,
     required this.title,
     required this.value,
@@ -282,7 +292,9 @@ class _QuizPageState extends State<QuizPage> {
   int? selectedAnswer;
   bool answered = false;
 
-  Question get currentQuestion => widget.questions[currentIndex];
+  Question get currentQuestion {
+    return widget.questions[currentIndex];
+  }
 
   void selectAnswer(int index) {
     if (answered) return;
@@ -301,7 +313,7 @@ class _QuizPageState extends State<QuizPage> {
     if (currentIndex == widget.questions.length - 1) {
       Navigator.pushReplacement(
         context,
-          MaterialPageRoute(  
+        MaterialPageRoute(
           builder: (_) => ResultPage(
             score: score,
             total: widget.questions.length,
@@ -335,10 +347,12 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   IconData? optionIcon(int index) {
-    if (!answered) return null;
+    if (!answered) {
+      return null;
+    }
 
     if (index == currentQuestion.correctIndex) {
-      return    Icons.check_circle;  
+      return Icons.check_circle;
     }
 
     if (index == selectedAnswer) {
@@ -363,7 +377,7 @@ class _QuizPageState extends State<QuizPage> {
           padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-              children: [  
+            children: [
               LinearProgressIndicator(
                 value:
                     (currentIndex + 1) / widget.questions.length,
@@ -372,12 +386,12 @@ class _QuizPageState extends State<QuizPage> {
               const SizedBox(height: 18),
 
               Row(
-                  children: [  
+                children: [
                   Chip(
                     label: Text(question.module),
                   ),
                   const SizedBox(width: 8),
-                   Chip( 
+                  Chip(
                     label: Text(question.difficulty),
                   ),
                 ],
@@ -402,14 +416,17 @@ class _QuizPageState extends State<QuizPage> {
                   itemBuilder: (context, index) {
                     return Card(
                       color: optionColor(index),
-                      margin: const EdgeInsets.only(bottom: 12),
+                      margin: const EdgeInsets.only(
+                        bottom: 12,
+                      ),
                       child: InkWell(
-                              borderRadius: BorderRadius.circular(      12),
+                        borderRadius:
+                            BorderRadius.circular(12),
                         onTap: () => selectAnswer(index),
                         child: Padding(
                           padding: const EdgeInsets.all(16),
                           child: Row(
-                             children: [ 
+                            children: [
                               CircleAvatar(
                                 child: Text(
                                   String.fromCharCode(
@@ -417,7 +434,9 @@ class _QuizPageState extends State<QuizPage> {
                                   ),
                                 ),
                               ),
+
                               const SizedBox(width: 14),
+
                               Expanded(
                                 child: Text(
                                   question.options[index],
@@ -426,6 +445,7 @@ class _QuizPageState extends State<QuizPage> {
                                   ),
                                 ),
                               ),
+
                               if (optionIcon(index) != null)
                                 Icon(
                                   optionIcon(index),
@@ -448,9 +468,9 @@ class _QuizPageState extends State<QuizPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(14),
                     child: Column(
-                               crossAxisAlignment:         
+                      crossAxisAlignment:
                           CrossAxisAlignment.start,
-                        children: [  
+                      children: [
                         Text(
                           selectedAnswer ==
                                   question.correctIndex
@@ -461,13 +481,16 @@ class _QuizPageState extends State<QuizPage> {
                             fontSize: 17,
                           ),
                         ),
+
                         const SizedBox(height: 8),
+
                         if (question.explanation.isNotEmpty)
                           Text(question.explanation),
+
                         if (question.legalBasis.isNotEmpty) ...[
                           const SizedBox(height: 8),
                           Text(
-                              'Base legal: ${question.legalBasis}', 'Base legal: ${question.legalBasis}', 'Base legal: ${question.legalBasis}', 'Base legal: ${question.legalBasis}',
+                            'Base legal: ${question.legalBasis}',
                             style: const TextStyle(
                               fontStyle: FontStyle.italic,
                             ),
@@ -488,8 +511,8 @@ class _QuizPageState extends State<QuizPage> {
                     child: Text(
                       currentIndex ==
                               widget.questions.length - 1
-                                                                   ?   RESULTADO                   'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VE 'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER   'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER R E S U L T ADO 'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO'  'VER 'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESU 'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESUL 'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADOTADO'   '  VER    'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER   RESULTADO  RESULTADO' 'VER  VER    'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESU                                                      ?   RESULTADO          'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER                                                         ?   RESULTADO          'VER RESULTADO'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'                                                          ?   RESULTADO          'VER                                                                 ?   RESULTADO                'VER RESULTADO' 'VER RESULTADO'      'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'                                                                ?   RESULTADO              RES SULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'O'  'VER RESULTADO' 'VER  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  ''VER RESULTADO'' 'VER  RES'  'VER RESULTADO' 'VER  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'   'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO' 'VER RESULTADO'  ''VER RESULTADO'' 'VER  RESULTADO' 'VER RESULTADO' 'VER RESULTADO'     ' 'VER  RESULTADO' 'VER RESULTADO' 'VER RESULTADO'    
-                                                                        :                                                                 :  'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA  :                                                                 :  'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA Q U 'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUE S T Ã O,  'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  IMA QUESTÃOPRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  IMA QUESTÃO',  'PRÓXIMA QUESTÃO , PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  IMA QUESTÃO',  ', PRÓXIMA QUESTÃO, PRÓXIMA QUEPRÓXIMA QUESTÃO , PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  IMA QUESTÃO',  TÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QU                                                                     :                                                                 :  'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, P                                                                       :                                                                 :  'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃ                                                                       :                                                                 :  'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUEST                                                                        :                                                                 :  'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA  A QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  PRÓXIMA QUESTÃO  PRÓXIMA QUESTÃOPRÓXIMA QUESTÃOPRÓXIMA QUESTÃO', ',  PRÓXIMA QUESTÃO  PRÓXIMA QUESTÃOPRÓXIMA QUESTÃOPRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTPRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO',  'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 'PRÓXIMA QUESTÃO', 
+                          ? 'VER RESULTADO'
+                          : 'PRÓXIMA QUESTÃO',
                     ),
                   ),
                 ),
@@ -515,10 +538,88 @@ class ResultPage extends StatelessWidget {
   String get message {
     final percentage = score / total;
 
-    if         (percentage >=         0.9) {
-                return ''Excelente! Você domina o conteúdo.''; return ''Excelente! Você domina o conteúdo.'';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o cont  return 'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conte  return 'Exc                                                                  :                                                                 :  'PRÓXIMA QUESTÃO', PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃO,  PRÓXIMA QUESTÃO, PRÓXIMA QUESTÃ ê domina o conteúdo.PRÓXIMA QUESTÃOExcelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return '  Excelente! Você domina o conteúd    return 'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo. 'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo. 'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo. 'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo. 'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo. 'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo. 'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo. 'Excelente! Você domina o conteúdo.'údo. 'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo. '  na o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';  o.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   retu'  na o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.'; Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';  o.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   '; Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';   Excelente! Você domina o conteúdo.  'Excelente! Você domina o conteúdo.';  o.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';    'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';   return 'Excelente! Você domina o conteúdo.'; return 'Excelente! Você domina o conteúdo.';  
-Excelente! Você domina o conteúdo.}
+    if (percentage >= 0.9) {
+      return 'Excelente! Você domina o conteúdo.';
+    }
 
-      Excelente! Você domina o conteúdo. Excelente! Você domina o conteúdo. 
-                 return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; retu return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; retur n   return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return ' return 'Muito bom! Continue estudando.'          ; Muito bom! Continue estudando.            'Muito bom! Continue estudando.'          ; Muito bom! Continue estudando.            'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. tinue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando.               return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return  ; Muito bom! Continue estudando. 'M return ''Muito bom! Continue estudando.''; return ''Muito bom! Continue estudando.''; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Cont; Muito bom! Continue estudando. 'Muito bom! Continue estudando.'; Muito bom! Continue estudando. 'M return ''Muito bom! Continue estudando.''; return ''Muito bom! Continue estudando.''; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'u returnMuito bom! Continue estudando.'Muito bom! Continue estudando.'Muito bom! Continue estudando.'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'Muito bom! Continue estudando.'; 'Muito bom! Continue estudando.' 'ito bom! Creturn 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'ito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.'; return 'Muito bom! Continue estudando.';'Muito bom! Continue estudando.'Muito bom! Continue estudando.' ; Muito bom! Continue estudando.   
-   
+    if (percentage >= 0.7) {
+      return 'Muito bom! Continue estudando.';
+    }
+
+    if (percentage >= 0.5) {
+      return 'Bom trabalho! Você pode melhorar ainda mais.';
+    }
+
+    return 'Continue estudando e tente novamente.';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Resultado'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.emoji_events,
+                size: 90,
+                color: Colors.amber,
+               ), 
+
+              const SizedBox(height: 24),
+
+              const Text(
+                'Desafio concluído!',
+                style: TextStyle(
+ Fonte Tamanho: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+              Text(
+                '$score de $total questões corretas',
+ Estilo: const TextStyle(
+ Fonte Tamanho: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+              Text(
+                message,
+                textAlign: TextAlign.center,
+ Estilo: const TextStyle(
+ Fonte Tamanho: 18,
+                ),
+              ),
+
+              const SizedBox(height: 40),
+
+              SizedBox(
+                width: double.infinity,
+ Altura: 52,
+                child: ElevatedButton(
+                  onPressed: () {
+                     Navigator.pop(context); 
+                  },
+ Criança: const Text(
+                    'VOLTAR AO INÍCIO',
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}         Corda Apanhem-se. Mensag  
