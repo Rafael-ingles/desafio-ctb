@@ -1,7 +1,7 @@
 {
   "project": "Desafio CTB",
-  "content_version": "0.2",
-  "question_count": 30,
+  "content_version": "1.0",
+  "question_count": 40,
   "questions": [
     {
       "id": "Q-01",
@@ -572,6 +572,196 @@
       "status": "review_required",
       "last_review": "2026-09-01",
       "version": "0.2"
-    }
+    },
+  {
+  "id": "Q-31",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "De acordo com a Resolução CONTRAN nº 1.031/2026, qual é o tema principal regulamentado pela norma?",
+  "options": [
+    "Os procedimentos de fiscalização do consumo de álcool ou de outra substância psicoativa que determine dependência",
+    "O sistema de livre passagem (free flow) em rodovias e vias urbanas",
+    "A transferência eletrônica de propriedade de veículos",
+    "Os requisitos de segurança para quadriciclos"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.031/2026 estabelece procedimentos para as autoridades de trânsito e seus agentes na fiscalização do consumo de álcool ou de outra substância psicoativa que determine dependência.",
+  "legal_basis": "Resolução CONTRAN nº 1.031, de 17 de agosto de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
+  {
+  "id": "Q-32",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.025/2026?",
+  "options": [
+    "A remoção, a guarda, a liberação e o leilão de veículos recolhidos",
+    "A fiscalização do consumo de álcool e outras substâncias psicoativas",
+    "Os requisitos de segurança e circulação dos quadriciclos",
+    "A transferência eletrônica de propriedade de veículos"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.025/2026 dispõe sobre a remoção, a guarda, a liberação e o leilão de veículos recolhidos.",
+  "legal_basis": "Resolução CONTRAN nº 1.025, de 26 de junho de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
+ {
+  "id": "Q-33",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.022/2026?",
+  "options": [
+    "Requisitos de segurança e circulação para quadriciclos",
+    "Transferência eletrônica de propriedade de veículos",
+    "Fiscalização do consumo de álcool e outras substâncias psicoativas",
+    "Remoção, guarda, liberação e leilão de veículos recolhidos"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.022/2026 estabelece requisitos de segurança e de circulação para os veículos automotores denominados quadriciclos.",
+  "legal_basis": "Resolução CONTRAN nº 1.022, de 26 de junho de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
+ {
+  "id": "Q-34",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.027/2026?",
+  "options": [
+    "Padronização dos procedimentos de registro, licenciamento e transferência de propriedade de veículos",
+    "Requisitos de segurança e circulação para quadriciclos",
+    "Remoção, guarda, liberação e leilão de veículos recolhidos",
+    "Fiscalização do consumo de álcool e outras substâncias psicoativas"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.027/2026 padroniza procedimentos relacionados ao registro, licenciamento e transferência de propriedade de veículos.",
+  "legal_basis": "Resolução CONTRAN nº 1.027, de 17 de agosto de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
+ {
+  "id": "Q-35",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.030/2026?",
+  "options": [
+    "Equipamentos geradores de imagens instalados em veículos automotores",
+    "Transferência eletrônica de propriedade de veículos",
+    "Requisitos de segurança e circulação para quadriciclos",
+    "Remoção, guarda, liberação e leilão de veículos recolhidos"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.030/2026 altera a Resolução CONTRAN nº 242/2007, relacionada aos equipamentos geradores de imagens instalados em veículos automotores.",
+  "legal_basis": "Resolução CONTRAN nº 1.030, de 17 de agosto de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
+ {
+  "id": "Q-36",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.029/2026?",
+  "options": [
+    "Prorrogação da validade da Autorização para Conduzir Ciclomotor e da CNH em situações específicas",
+    "Requisitos de segurança e circulação para quadriciclos",
+    "Transferência eletrônica de propriedade de veículos",
+    "Fiscalização do consumo de álcool e outras substâncias psicoativas"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.029/2026 aprova a Deliberação CONTRAN nº 278/2026, que trata da extensão da validade da Autorização para Conduzir Ciclomotor e da CNH para determinados vencimentos.",
+  "legal_basis": "Resolução CONTRAN nº 1.029, de 17 de agosto de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+}, 
+ {
+  "id": "Q-37",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.028/2026?",
+  "options": [
+    "Regime de transição para a consolidação dos sistemas de livre passagem (free flow)",
+    "Fiscalização do consumo de álcool e outras substâncias psicoativas",
+    "Transferência eletrônica de propriedade de veículos",
+    "Requisitos de segurança e circulação para quadriciclos"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.028/2026 aprova a Deliberação nº 277/2026, que estabelece um regime de transição para a consolidação dos sistemas de livre passagem (free flow).",
+  "legal_basis": "Resolução CONTRAN nº 1.028, de 17 de agosto de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
+    {
+  "id": "Q-38",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.023/2026?",
+  "options": [
+    "Identificação, segurança e requisitos de circulação para veículos off-road recreativos, esportivos e de turismo",
+    "Transferência eletrônica de propriedade de veículos",
+    "Fiscalização do consumo de álcool e outras substâncias psicoativas",
+    "Requisitos de segurança e circulação para quadriciclos"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.023/2026 estabelece requisitos de identificação, segurança e circulação para veículos off-road utilizados em atividades recreativas, esportivas e de turismo.",
+  "legal_basis": "Resolução CONTRAN nº 1.023, de 26 de junho de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
+    {
+  "id": "Q-39",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.024/2026?",
+  "options": [
+    "Requisitos aplicáveis a veículos utilizados na operação e manutenção da Rede Hidrometeorológica Nacional",
+    "Requisitos de segurança e circulação para quadriciclos",
+    "Transferência eletrônica de propriedade de veículos",
+    "Regime de transição para sistemas de livre passagem (free flow)"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.024/2026 altera a Resolução CONTRAN nº 970/2022 em relação aos veículos utilizados na operação e manutenção da Rede Hidrometeorológica Nacional.",
+  "legal_basis": "Resolução CONTRAN nº 1.024, de 26 de junho de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
+    {
+  "id": "Q-40",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual é o tema principal da Resolução CONTRAN nº 1.021/2026?",
+  "options": [
+    "Instalação de motor elétrico auxiliar em caminhões e tratores",
+    "Requisitos de segurança e circulação para quadriciclos",
+    "Transferência eletrônica de propriedade de veículos",
+    "Fiscalização do consumo de álcool e outras substâncias psicoativas"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.021/2026 aprova a Deliberação nº 276/2026, que trata da instalação de motor elétrico auxiliar em caminhões e tratores, além de alterar o Anexo IV da Resolução CONTRAN nº 916/2022.",
+  "legal_basis": "Resolução CONTRAN nº 1.021, de 28 de maio de 2026.",
+  "source": "Ministério dos Transportes – Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-02",
+  "version": "1.0"
+},
   ]
 }
