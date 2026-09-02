@@ -202,7 +202,7 @@ class _HeaderCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.12),
+            color: Colors.black.withValues(alpha: 0.12),
             blurRadius: 14,
             offset: const Offset(0, 6),
           ),
@@ -214,7 +214,7 @@ class _HeaderCard extends StatelessWidget {
             width: 58,
             height: 58,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.12),
+              color: Colors.white.withValues(alpha: 0.10),
               borderRadius: BorderRadius.circular(16),
             ),
             child: const Icon(
@@ -285,7 +285,7 @@ class _CategoryCard extends StatelessWidget {
                 width: 52,
                 height: 52,
                 decoration: BoxDecoration(
-                  color: category.color.withOpacity(0.10),
+                  color: category.colorwithValues(alpha: 0,10),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Icon(
