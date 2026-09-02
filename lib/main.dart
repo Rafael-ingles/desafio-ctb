@@ -600,7 +600,7 @@ class QuizQuestion {
       options: rawOptions is List
           ? rawOptions.map((e) => '$e').toList()
           : const [],
-      correctAnswer: int.tryParse('${json['correctAnswer'] ?? 0}') ?? 0,
+      correctAnswer: int.tryParse('${json['correct_index'] ?? json['correctAnswer'] ?? 0}',
       explanation: '${json['explanation'] ?? ''}',
       legalBasis: '${json['legalBasis'] ?? ''}',
       module: '${json['module'] ?? ''}',
