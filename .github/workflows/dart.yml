@@ -21,13 +21,15 @@ jobs:
           channel: stable
           cache: true
 
+      
       - name: Create Android project
         run: |
           if [ ! -d android ]; then
             flutter create --platforms=android .
-            rm -rf test
           fi
-
+          rm -rf test
+          rm -f analysis_options.yaml
+          
       - name: Install dependencies
         run: flutter pub get
         
