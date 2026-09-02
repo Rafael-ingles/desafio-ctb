@@ -1,4 +1,4 @@
- import 'dart:convert';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -570,14 +570,14 @@ class ResultPage extends StatelessWidget {
                 Icons.emoji_events,
                 size: 90,
                 color: Colors.amber,
-               ), 
+              ),
 
               const SizedBox(height: 24),
 
               const Text(
                 'Desafio concluído!',
                 style: TextStyle(
- Fonte Tamanho: 28,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -586,8 +586,8 @@ class ResultPage extends StatelessWidget {
 
               Text(
                 '$score de $total questões corretas',
- Estilo: const TextStyle(
- Fonte Tamanho: 22,
+                style: const TextStyle(
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -597,8 +597,8 @@ class ResultPage extends StatelessWidget {
               Text(
                 message,
                 textAlign: TextAlign.center,
- Estilo: const TextStyle(
- Fonte Tamanho: 18,
+                style: const TextStyle(
+                  fontSize: 18,
                 ),
               ),
 
@@ -606,12 +606,12 @@ class ResultPage extends StatelessWidget {
 
               SizedBox(
                 width: double.infinity,
- Altura: 52,
+                height: 52,
                 child: ElevatedButton(
                   onPressed: () {
-                     Navigator.pop(context); 
+                    Navigator.pop(context);
                   },
- Criança: const Text(
+                  child: const Text(
                     'VOLTAR AO INÍCIO',
                   ),
                 ),
@@ -622,4 +622,4 @@ class ResultPage extends StatelessWidget {
       ),
     );
   }
-}         Corda Apanhem-se. Mensag  
+}
