@@ -25,6 +25,7 @@ jobs:
         run: |
           if [ ! -d android ]; then
             flutter create --platforms=android .
+            rm -rf test
           fi
 
       - name: Install dependencies
