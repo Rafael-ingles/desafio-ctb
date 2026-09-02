@@ -1,0 +1,577 @@
+{
+  "project": "Desafio CTB",
+  "content_version": "0.2",
+  "question_count": 30,
+  "questions": [
+    {
+      "id": "Q-01",
+      "module": "Sistema Nacional de Trânsito",
+      "difficulty": "easy",
+      "question": "Questão 1: conteúdo do módulo Sistema Nacional de Trânsito.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-02",
+      "module": "Sistema Nacional de Trânsito",
+      "difficulty": "easy",
+      "question": "Questão 2: conteúdo do módulo Sistema Nacional de Trânsito.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-03",
+      "module": "Sistema Nacional de Trânsito",
+      "difficulty": "medium",
+      "question": "Questão 3: conteúdo do módulo Sistema Nacional de Trânsito.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-04",
+      "module": "Sistema Nacional de Trânsito",
+      "difficulty": "medium",
+      "question": "Questão 4: conteúdo do módulo Sistema Nacional de Trânsito.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-05",
+      "module": "Sistema Nacional de Trânsito",
+      "difficulty": "hard",
+      "question": "Questão 5: conteúdo do módulo Sistema Nacional de Trânsito.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-06",
+      "module": "CTB e conceitos",
+      "difficulty": "easy",
+      "question": "Questão 6: conteúdo do módulo CTB e conceitos.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-07",
+      "module": "CTB e conceitos",
+      "difficulty": "easy",
+      "question": "Questão 7: conteúdo do módulo CTB e conceitos.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-08",
+      "module": "CTB e conceitos",
+      "difficulty": "medium",
+      "question": "Questão 8: conteúdo do módulo CTB e conceitos.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-09",
+      "module": "CTB e conceitos",
+      "difficulty": "medium",
+      "question": "Questão 9: conteúdo do módulo CTB e conceitos.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-10",
+      "module": "CTB e conceitos",
+      "difficulty": "hard",
+      "question": "Questão 10: conteúdo do módulo CTB e conceitos.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-11",
+      "module": "Circulação e conduta",
+      "difficulty": "easy",
+      "question": "Questão 11: conteúdo do módulo Circulação e conduta.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-12",
+      "module": "Circulação e conduta",
+      "difficulty": "easy",
+      "question": "Questão 12: conteúdo do módulo Circulação e conduta.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-13",
+      "module": "Circulação e conduta",
+      "difficulty": "medium",
+      "question": "Questão 13: conteúdo do módulo Circulação e conduta.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-14",
+      "module": "Circulação e conduta",
+      "difficulty": "medium",
+      "question": "Questão 14: conteúdo do módulo Circulação e conduta.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-15",
+      "module": "Circulação e conduta",
+      "difficulty": "hard",
+      "question": "Questão 15: conteúdo do módulo Circulação e conduta.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-16",
+      "module": "Circulação e conduta",
+      "difficulty": "hard",
+      "question": "Questão 16: conteúdo do módulo Circulação e conduta.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-17",
+      "module": "Sinalização",
+      "difficulty": "easy",
+      "question": "Questão 17: conteúdo do módulo Sinalização.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-18",
+      "module": "Sinalização",
+      "difficulty": "easy",
+      "question": "Questão 18: conteúdo do módulo Sinalização.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-19",
+      "module": "Sinalização",
+      "difficulty": "medium",
+      "question": "Questão 19: conteúdo do módulo Sinalização.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-20",
+      "module": "Sinalização",
+      "difficulty": "medium",
+      "question": "Questão 20: conteúdo do módulo Sinalização.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-21",
+      "module": "Sinalização",
+      "difficulty": "hard",
+      "question": "Questão 21: conteúdo do módulo Sinalização.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-22",
+      "module": "Infrações e penalidades",
+      "difficulty": "easy",
+      "question": "Questão 22: conteúdo do módulo Infrações e penalidades.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-23",
+      "module": "Infrações e penalidades",
+      "difficulty": "easy",
+      "question": "Questão 23: conteúdo do módulo Infrações e penalidades.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-24",
+      "module": "Infrações e penalidades",
+      "difficulty": "medium",
+      "question": "Questão 24: conteúdo do módulo Infrações e penalidades.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-25",
+      "module": "Infrações e penalidades",
+      "difficulty": "medium",
+      "question": "Questão 25: conteúdo do módulo Infrações e penalidades.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-26",
+      "module": "Infrações e penalidades",
+      "difficulty": "hard",
+      "question": "Questão 26: conteúdo do módulo Infrações e penalidades.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-27",
+      "module": "Situações reais",
+      "difficulty": "easy",
+      "question": "Questão 27: conteúdo do módulo Situações reais.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-28",
+      "module": "Situações reais",
+      "difficulty": "medium",
+      "question": "Questão 28: conteúdo do módulo Situações reais.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-29",
+      "module": "Situações reais",
+      "difficulty": "medium",
+      "question": "Questão 29: conteúdo do módulo Situações reais.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    },
+    {
+      "id": "Q-30",
+      "module": "Situações reais",
+      "difficulty": "hard",
+      "question": "Questão 30: conteúdo do módulo Situações reais.",
+      "options": [
+        "Alternativa A",
+        "Alternativa B",
+        "Alternativa C",
+        "Alternativa D"
+      ],
+      "correct_index": 0,
+      "explanation": "Questão de estrutura inicial. O conteúdo jurídico deve ser revisado antes da publicação comercial.",
+      "legal_basis": "Revisar conforme CTB e regulamentação CONTRAN vigente",
+      "source": "CTB/CONTRAN — revisão editorial necessária",
+      "status": "review_required",
+      "last_review": "2026-09-01",
+      "version": "0.2"
+    }
+  ]
+}
