@@ -467,14 +467,14 @@ class UpdatesPage extends StatelessWidget {
             height: 52,
             child: FilledButton.icon(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text(
-                      'O sistema de atualização será ativado na próxima etapa.',
-                    ),
-                  ),
-                );
-              },
+  ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(
+      content: Text(
+        'Verificando atualizações das Resoluções do CONTRAN...',
+      ),
+    ),
+  );
+},
               icon: const Icon(Icons.refresh_rounded),
               label: const Text(
                 'VERIFICAR ATUALIZAÇÕES',
