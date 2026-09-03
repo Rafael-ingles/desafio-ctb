@@ -13,7 +13,7 @@ class DesafioCTBApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Desafio CTB',
+      title:'Desafio CTB - Resoluções e Atualizações',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
