@@ -118,7 +118,7 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            tooltip: 'Atualizações',
+            tooltip: 'Atualizar resoluções',
             icon: const Icon(Icons.system_update_alt_rounded),
             onPressed: () {
               Navigator.push(
