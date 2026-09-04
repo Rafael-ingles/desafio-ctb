@@ -571,7 +571,103 @@
       "source": "CTB/CONTRAN — revisão editorial necessária",
       "status": "review_required",
       "last_review": "2026-09-01",
-      "version": "0.2"
+      "version": "0.2",
+    }
+    {
+  "id": "Q-31",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual resolução do CONTRAN, publicada em agosto de 2026, dispõe sobre os procedimentos de fiscalização do consumo de álcool ou de outra substância psicoativa que determine dependência?",
+  "options": [
+    "Resolução CONTRAN nº 1.013/2024",
+    "Resolução CONTRAN nº 1.020/2025",
+    "Resolução CONTRAN nº 1.031/2026",
+    "Resolução CONTRAN nº 1.027/2026"
+  ],
+  "correct_index": 2,
+  "explanation": "A Resolução CONTRAN nº 1.031, de 17 de agosto de 2026, dispõe sobre os procedimentos de fiscalização do consumo de álcool ou de outra substância psicoativa que determine dependência.",
+  "legal_basis": "Resolução CONTRAN nº 1.031/2026",
+  "source": "Ministério dos Transportes - Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-04",
+  "version": "0.3"
+},
+{
+  "id": "Q-32",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "A Resolução CONTRAN nº 1.031/2026 revogou expressamente qual resolução relacionada aos procedimentos de fiscalização de álcool?",
+  "options": [
+    "Resolução nº 432/2013",
+    "Resolução nº 242/2007",
+    "Resolução nº 970/2022",
+    "Resolução nº 985/2022"
+  ],
+  "correct_index": 0,
+  "explanation": "A página oficial do Ministério dos Transportes informa que a Resolução CONTRAN nº 1.031/2026 revoga a Resolução nº 432/2013.",
+  "legal_basis": "Resolução CONTRAN nº 1.031/2026",
+  "source": "Ministério dos Transportes - Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-04",
+  "version": "0.3"
+},
+{
+  "id": "Q-33",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "medium",
+  "question": "Qual resolução do CONTRAN de 2026 altera a Resolução nº 242/2007, relacionada à instalação e utilização de equipamentos geradores de imagens nos veículos automotores?",
+  "options": [
+    "Resolução nº 1.025/2026",
+    "Resolução nº 1.030/2026",
+    "Resolução nº 1.031/2026",
+    "Resolução nº 1.022/2026"
+  ],
+  "correct_index": 1,
+  "explanation": "A Resolução CONTRAN nº 1.030, de 17 de agosto de 2026, altera a Resolução nº 242/2007.",
+  "legal_basis": "Resolução CONTRAN nº 1.030/2026",
+  "source": "Ministério dos Transportes - Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-04",
+  "version": "0.3"
+},
+{
+  "id": "Q-34",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "hard",
+  "question": "Qual resolução do CONTRAN de 2026 normatiza os procedimentos de registro, licenciamento e transferência de propriedade de veículos?",
+  "options": [
+    "Resolução nº 1.025/2026",
+    "Resolução nº 1.027/2026",
+    "Resolução nº 1.028/2026",
+    "Resolução nº 1.030/2026"
+  ],
+  "correct_index": 1,
+  "explanation": "A Resolução CONTRAN nº 1.027, de 17 de agosto de 2026, normatiza os procedimentos de registro, licenciamento e transferência de propriedade de veículos.",
+  "legal_basis": "Resolução CONTRAN nº 1.027/2026",
+  "source": "Ministério dos Transportes - Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-04",
+  "version": "0.3"
+},
+{
+  "id": "Q-35",
+  "module": "Resoluções do CONTRAN",
+  "difficulty": "hard",
+  "question": "Qual resolução do CONTRAN de 2026 estabelece requisitos de segurança e circulação para os veículos automotores denominados quadriciclos?",
+  "options": [
+    "Resolução nº 1.022/2026",
+    "Resolução nº 1.023/2026",
+    "Resolução nº 1.024/2026",
+    "Resolução nº 1.026/2026"
+  ],
+  "correct_index": 0,
+  "explanation": "A Resolução CONTRAN nº 1.022, de 26 de junho de 2026, estabelece requisitos de segurança e de circulação para os veículos automotores denominados quadriciclos.",
+  "legal_basis": "Resolução CONTRAN nº 1.022/2026",
+  "source": "Ministério dos Transportes - Resoluções CONTRAN",
+  "status": "reviewed",
+  "last_review": "2026-09-04",
+  "version": "0.3"
+}
     }
   ]
 }
